@@ -1,17 +1,17 @@
 class Plant:
     class Statistics:
-        def __init__(self):
+        def __init__(self) -> None:
             self._grow_calls = 0
             self._age_calls = 0
             self._show_calls = 0
 
-        def add_show_call(self):
+        def add_show_call(self) -> None:
             self._show_calls += 1
 
-        def add_age_call(self):
+        def add_age_call(self) -> None:
             self._age_calls += 1
 
-        def add_grow_call(self):
+        def add_grow_call(self) -> None:
             self._grow_calls += 1
 
     def __init__(self, name: str, height: float, age: int) -> None:
@@ -60,7 +60,7 @@ class Plant:
         return age > 365
 
     @classmethod
-    def anonymous(cls):
+    def anonymous(cls) -> "Plant":
         return cls("Unknown plant", 0.0, 0)
 
 
@@ -77,7 +77,7 @@ class Flower(Plant):
         super().show()
         print(f"  Color: {self.color}")
         if not self.bloom_track:
-            print(f"  {self.name} has not bloomed yet")     
+            print(f"  {self.name} has not bloomed yet")
         else:
             print(f"  {self.name} is blooming beautifully!")
 
@@ -94,7 +94,7 @@ class Seed(Flower):
         self.seed_count = 0
         self.bloom_track = False
 
-    def bloom(self):
+    def bloom(self) -> None:
         super().bloom()
         self.seed_count += 42
 
