@@ -43,7 +43,7 @@ class Plant:
         return self._height
 
     def show(self) -> None:
-        print(f" {self.name}: {float(self._height)}cm, {self._age} days old")
+        print(f"{self.name}: {float(self._height)}cm, {self._age} days old")
         self._statistics.add_show_call()
 
     def grow(self) -> None:
@@ -77,9 +77,9 @@ class Flower(Plant):
         super().show()
         print(f"  Color: {self.color}")
         if not self.bloom_track:
-            print(f"  {self.name} has not bloomed yet")
+            print(f" {self.name} has not bloomed yet")
         else:
-            print(f"  {self.name} is blooming beautifully!")
+            print(f" {self.name} is blooming beautifully!")
 
 
 class Seed(Flower):
@@ -114,9 +114,9 @@ class Tree(Plant):
 
         if self.tree_track == 0:
             super().show()
-            print(f"  Trunk diameter: {float(self.trunk_diameter)}cm")
+            print(f" Trunk diameter: {float(self.trunk_diameter)}cm")
         else:
-            print(f" Tree {self.name} now produces a shade of "
+            print(f"Tree {self.name} now produces a shade of "
                   f"{float(self._height)}cm"
                   f" long and {float(self.trunk_diameter)}cm wide.")
 
@@ -163,18 +163,18 @@ class Vegetable(Plant):
 
 def display(plant: Plant) -> None:
     if plant.__class__.__name__ == "Seed" and not seed1.bloom_track:
-        print(f"  Seeds: {seed1.seed_count}")
+        print(f" Seeds: {seed1.seed_count}")
         return
     if plant.__class__.__name__ == "Seed" and seed1.bloom_track:
-        print(f"  Seeds: {seed1.seed_count}")
-    print(f" [statistics for {plant.name.capitalize()}]")
+        print(f" Seeds: {seed1.seed_count}")
+    print(f"[statistics for {plant.name.capitalize()}]")
     print(
-            f" Stats: {plant._statistics._grow_calls} grow, "
+            f"Stats: {plant._statistics._grow_calls} grow, "
             f"{plant._statistics._age_calls} age, "
             f"{plant._statistics._show_calls} show"
         )
     if (plant.__class__.__name__ == "Tree"):
-        print(f"  {tree1._shade_calls} shade")
+        print(f" {tree1._shade_calls} shade")
 
 
 if __name__ == "__main__":
@@ -183,38 +183,38 @@ if __name__ == "__main__":
     seed1 = Seed("Sunflower", 80, 45, "yellow")
     tree1 = Tree("Oak", 200, 365, 5)
     anonymous1 = Plant.anonymous()
-    print(' === Garden statistics ===')
-    print(' === Check year-old')
-    print(f' Is 30 days more than a year? -> {Plant.is_older_than_one(30)}')
-    print(f' Is 400 days more than a year? -> {Plant.is_older_than_one(400)}')
+    print('=== Garden statistics ===')
+    print('=== Check year-old')
+    print(f'Is 30 days more than a year? -> {Plant.is_older_than_one(30)}')
+    print(f'Is 400 days more than a year? -> {Plant.is_older_than_one(400)}')
     print("\n")
-    print(" === Flower")
+    print("=== Flower")
     flower1.show()
     display(flower1)
-    print(f" [asking the {(flower1.name.lower())} to grow and bloom]")
+    print(f"[asking the {(flower1.name.lower())} to grow and bloom]")
     flower1.bloom()
     flower1.grow()
     flower1.show()
     display(flower1)
     print("\n")
-    print(" === Tree")
+    print("=== Tree")
     tree1.show()
     display(tree1)
-    print(f" [asking the {tree1.name.lower()} to produce shade]")
+    print(f"[asking the {tree1.name.lower()} to produce shade]")
     tree1.produce_shade()
     tree1.show()
     display(tree1)
     print("\n")
-    print(" === Seed")
+    print("=== Seed")
     seed1.show()
     display(seed1)
-    print(f" [make {(seed1.name.lower())} to grow, age and bloom]")
+    print(f"[make {(seed1.name.lower())} to grow, age and bloom]")
     seed1.bloom()
     seed1.grow()
     seed1.age()
     seed1.show()
     display(seed1)
     print("\n")
-    print(" === Anonymous")
+    print("=== Anonymous")
     anonymous1.show()
     display(anonymous1)

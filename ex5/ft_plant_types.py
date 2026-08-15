@@ -50,12 +50,12 @@ class Flower(Plant):
 
     def show(self) -> None:
         super().show()
-        print(f" Color: {self.color}")
+        print(f" Color: {self.color.lower()}")
         if self.bloom_track == 0:
             print(" Rose has not bloomed yet")
             print(f"[asking the {(self.name.lower())} to bloom]")
         else:
-            print("Rose is blooming beautifully!")
+            print(" Rose is blooming beautifully!")
 
 
 class Tree(Plant):
@@ -106,7 +106,7 @@ class Vegetable(Plant):
                   f"grow and age for {self.delay} days]")
             super().show()
             print(" Harvest season: April")
-            print(f" Nutritional value :{self.nutritional_value}")
+            print(f" Nutritional value : {self.nutritional_value}")
 
     def age(self) -> None:
         self.delay = self._age

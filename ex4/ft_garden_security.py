@@ -8,8 +8,8 @@ class Plant:
 
     def set_height(self, height: float) -> None:
         if height >= 0:
-            self._height = float(height)
-            print(f"Height updated: {self._height} cm")
+            self._height = (height)
+            print(f"Height updated: {self._height}cm")
         else:
             print(f"{self.name}: Error, height can't be negative")
             print("Height update rejected")
