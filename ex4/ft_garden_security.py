@@ -35,7 +35,7 @@ class Plant:
 if __name__ == "__main__":
     plant1 = Plant("Rose", 15, 10)
     print("=== Garden Security System ===")
-    print("Plant created:", end="")
+    print("Plant created: ", end="")
     plant1.show()
     print("\n")
     plant1.set_height(25)
