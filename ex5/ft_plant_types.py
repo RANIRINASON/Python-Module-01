@@ -89,23 +89,22 @@ class Vegetable(Plant):
                  height: float,
                  age: int,
                  nutritional_value: int,
-                 harvest_season: int) -> None:
+                 harvest_season: str) -> None:
         super().__init__(name, height, age)
         self.nutritional_value = nutritional_value
-        self.harvest_season = 0
+        self.harvest_season = harvest_season
         self.delay = 0
 
     def show(self) -> None:
         if not self.harvest_season:
             super().show()
-            print(" Harvest season: April")
+            print(f" Harvest season: {self.harvest_season}")
             print(f" Nutritional value: {self.nutritional_value}")
-            self.harvest_season += 1
         else:
             print(f"[make {self.name.lower()} "
                   f"grow and age for {self.delay} days]")
             super().show()
-            print(" Harvest season: April")
+            print(f" Harvest season: {self.harvest_season}")
             print(f" Nutritional value : {self.nutritional_value}")
 
     def age(self) -> None:
@@ -122,7 +121,7 @@ class Vegetable(Plant):
 if __name__ == "__main__":
     flower1 = Flower("Rose", 15, 10, "Red")
     tree1 = Tree("Oak", 200, 365, 5)
-    vegetable1 = Vegetable("Tomato", 5, 10, 0, 20)
+    vegetable1 = Vegetable("Tomato", 5, 10, 0, "Avril")
     print("=== Garden Plant Types ===")
     print("=== Flower")
     flower1.show()
